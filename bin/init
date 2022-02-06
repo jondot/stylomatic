@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+const path = require('path')
+const fs = require('fs')
+
+const copy = (fromFile, toFile) => {
+  fs.writeFileSync(toFile, fs.readFileSync(fromFile))
+}
+
+const apply = (fname)=> {
+  const from = path.join(__dirname, '../')
+  const targetPath = process.cwd()
+  const target = path.join(targetPath, fname)
+  if (fs.existsSync(target)) {
+    console.error(`exists:\n\t${target}`)
+  } else {
+    copy(path.join(from, `${fname}.tmpl`), target)
+    console.log(`added:\n\t${target}`)
+  }
+}
+
+console.log('applying configs.')
+apply('.eslintrc.js')
+apply('tsconfig.json')
+
+
+
