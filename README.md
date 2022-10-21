@@ -26,6 +26,22 @@ yarn stylomatic
 
 Will give you a starter `.eslint.js` and `tsconfig.json`.
 
+# Tooling deps
+
+Starting v0.5.0, moved to here, instead of installed by default to be more compatible with how different package managers handle bins. Put these in root of your monorepo if needed:
+
+```json
+    "jest": "^28.1.1",
+    "ts-jest": "^29.0.3",
+    "tsup": "^6.1.0",
+    "typescript-cp": "^0.1.5",
+    "typescript": "^4.7.3",
+    "concurrently": "^7.2.1",
+    "rimraf": "^3.0.2",
+    "tsc-alias": "^1.6.9"
+```
+
+
 # Quick start
 
 ```
