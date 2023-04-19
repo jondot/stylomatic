@@ -1,21 +1,25 @@
 module.exports = {
-  extends: ["@antfu/eslint-config-react", "prettier"],
-  plugins: ["prettier"],
+  extends: [
+    '@antfu/eslint-config-react',
+    'prettier',
+    'plugin:tailwindcss/recommended',
+  ],
+  plugins: ['prettier'],
   rules: {
-    "@typescript-eslint/no-unused-vars": [
-      "error",
+    '@typescript-eslint/no-unused-vars': [
+      'error',
       {
-        "argsIgnorePattern": "^_",
-        "varsIgnorePattern": "^_",
-      }
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      },
     ],
-    //'arrow-parens': ["error", "always"],
-    "prettier/prettier": [
-      "error",
+    // 'arrow-parens': ["error", "always"],
+    'prettier/prettier': [
+      'error',
       {
-        "semi": false,
-        "singleQuote": true
-      }
+        semi: false,
+        singleQuote: true,
+      },
     ],
   },
-};
+}
