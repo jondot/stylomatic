@@ -5,7 +5,7 @@
 > Styles, configs, and tools for modern Typescript with zero configuration
 
 * :lipstick: Core styles based on [@antfu/config](https://github.com/antfu/eslint-config) covering Typescript, React, best practices, and even `package.json` ordering and formatting, and more.
-* :high_brightness: [prettier](https://github.com/prettier/prettier-eslint) for consistent formatting for all
+* :high_brightness: formatting is almost similar to Prettier, without the added burden of it on eslint
 * :computer: Typescript config for various usecases
 * :hammer: Tools: `esno`, `tsup` and intergrations `ts-jest`, and more.
 
@@ -60,7 +60,6 @@ $ yarn eslint src/index.ts
 
 src/index.ts
   1:1   error  Unexpected console statement                                       no-console
-  1:13  error  Replace `"hello·unstyled·world");` with `'hello·unstyled·world')`  prettier/prettier
 
 ✖ 2 problems (2 errors, 0 warnings)
   1 error and 0 warnings potentially fixable with the `--fix` option.
