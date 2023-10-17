@@ -16,7 +16,8 @@
     "skipLibCheck": true,
     "strict": true,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "target":"ES2021"
   },
   "exclude": [
     "node_modules"

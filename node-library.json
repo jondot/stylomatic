@@ -5,7 +5,6 @@
   "compilerOptions": {
     "module": "commonjs",
     "declaration": true,
-    "target": "es6",
     "strict": true
   }
 }

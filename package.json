@@ -1,28 +1,28 @@
 {
   "name": "stylomatic",
-  "version": "0.7.0",
+  "version": "0.8.3",
   "main": "index.js",
   "license": "MIT",
   "files": [
-    "eslint-preset.js",
     "jest-node.js",
     "base.json",
     "nextjs.json",
     "react-library.json",
     "node-library.json",
     "tsconfig.json.tmpl",
-    ".eslintrc.js.tmpl"
+    ".eslintrc.js.tmpl",
+    ".prettierrc.js.tmpl"
   ],
   "bin": {
     "stylomatic": "bin/init"
   },
-  "dependencies": {
-    "@antfu/eslint-config": "^0.38.5",
-    "@antfu/eslint-config-react": "^0.38.5",
-    "@types/supertest": "^2.0.12",
-    "eslint": "^8.38.0",
-    "eslint-config-next": "^13.3.0",
-    "eslint-plugin-tailwindcss": "^3.11.0",
+  "devDependencies": {
+    "@types/supertest": "^2.0.14",
+    "@vercel/style-guide": "5.0.2-canary.1",
+    "eslint": "^8.51.0",
+    "eslint-plugin-tailwindcss": "^3.13.0",
+    "prettier": "3.0.3",
+    "stylomatic": "^0.8.1",
     "supertest": "^6.3.3"
   }
 }

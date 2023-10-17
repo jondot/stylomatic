@@ -10,27 +10,30 @@
 * :hammer: Tools: `esno`, `tsup` and intergrations `ts-jest`, and more.
 
 
-# Install
-
-```
-yarn add --dev stylomatic
-```
 
 # Usage
 
 Bootstrap quickly:
 
 ```
-yarn stylomatic
+pnpm i -D stylomatic eslint prettier @vercel/style-guide@5.0.2-canary.1 eslint-plugin-tailwindcss
 ```
 
-Will give you a starter `.eslint.js` and `tsconfig.json`.
+```
+pnpm stylomatic init
+```
+
+Will give you a starter `.eslintrc.js`, `.prettierrc.js` and `tsconfig.json`.
+
+> note: because of package hoisting, we're installing all top-level deps. Stylomatic used to group all dependencies but today, stylomatic has been reduced to install just for `tsconfig` assets and the installer bin.
 
 # Tooling deps
 
 Starting v0.5.0, moved to here, instead of installed by default to be more compatible with how different package managers handle bins. Put these in root of your monorepo if needed:
 
 ```json
+    "@types/supertest": "^2.0.14",
+    "supertest": "^6.3.3"
     "jest": "^28.1.1",
     "ts-jest": "^29.0.3",
     "tsup": "^6.1.0",
@@ -41,55 +44,3 @@ Starting v0.5.0, moved to here, instead of installed by default to be more compa
     "tsc-alias": "^1.6.9"
 ```
 
-
-# Quick start
-
-```
-$ mkdir myproject && cd myproject
-$ yarn init -y && yarn add --dev stylomatic
-
-$ yarn stylomatic
-added .eslint.js
-added tsconfig.json
-
-$ mkdir src
-$ cat > src/index.ts
-console.log("hello unstyled world");
-
-$ yarn eslint src/index.ts
-
-src/index.ts
-  1:1   error  Unexpected console statement                                       no-console
-
-✖ 2 problems (2 errors, 0 warnings)
-  1 error and 0 warnings potentially fixable with the `--fix` option.
-```
-
-# Recommended config
-
-In your `.eslint.js`:
-
-```js
-module.exports = require('stylomatic/eslint-preset')
-```
-
-And in your `tsconfig.json`:
-
-```json
-{
-  "extends": "stylomatic/node-library.json",
-  "compilerOptions": {
-    "outDir": "dist",
-    "strict": false,
-    "isolatedModules": false
-  },
-  "include": [
-    "./src",
-    "./test"
-  ],
-  "exclude": [
-    "**/__tests__/",
-    "test/fixtures"
-  ]
-}
-```
